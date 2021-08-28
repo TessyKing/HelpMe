@@ -20,12 +20,18 @@ SOURCES += \
     loginform.cpp \
     main.cpp \
     patientform.cpp \
+    qwidgetdraw.cpp \
+    qwidgetecgcom.cpp \
+    qwidgetserialtx.cpp \
     widget.cpp
 
 HEADERS += \
     historicaldataform.h \
     loginform.h \
     patientform.h \
+    qwidgetdraw.h \
+    qwidgetecgcom.h \
+    qwidgetserialtx.h \
     widget.h
 
 FORMS += \
