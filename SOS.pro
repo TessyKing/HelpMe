@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,22 +16,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    qserversocket.cpp \
     historicaldataform.cpp \
     loginform.cpp \
     main.cpp \
     patientform.cpp \
-    qwidgetdraw.cpp \
-    qwidgetecgcom.cpp \
-    qwidgetserialtx.cpp \
+    qmonitorsocket.cpp \
+    sqlpatientsmgr.cpp \
     widget.cpp
 
 HEADERS += \
+    qserversocket.h \
     historicaldataform.h \
     loginform.h \
     patientform.h \
-    qwidgetdraw.h \
-    qwidgetecgcom.h \
-    qwidgetserialtx.h \
+    qmonitorsocket.h \
+    sqlpatientsmgr.h \
     widget.h
 
 FORMS += \
