@@ -9,8 +9,8 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QList<PatientData> *list = SqlPatientsMgr::Instance()->SelectPatient("ssh");
-    SqlPatientsMgr::Instance()->AddPatientRecord(list->at(0),false);
+//    QList<PatientData> *list = SqlPatientsMgr::Instance()->SelectPatient("ssh");
+//    SqlPatientsMgr::Instance()->AddPatientRecord(list->at(0),false);
 }
 
 Widget::~Widget()
