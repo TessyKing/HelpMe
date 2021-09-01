@@ -1,5 +1,5 @@
-QT       += core gui sql network
-QT       += serialport
+QT       += core gui network sql
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -16,54 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    drawwave.cpp \
-    loginform.cpp \
     main.cpp \
-    patient.cpp \
-    patientform.cpp \
-    serialreceiver.cpp \
-    serialsender.cpp \
-    showdata.cpp \
-    widget.cpp \
-    widgetcurrent.cpp \
-    widgethistory.cpp \
-    clientwidget.cpp \
-    historicaldataform.cpp \
-    sqlpatientsmgr.cpp \
-    widgetselect.cpp
+    serverwidget.cpp \
+    sqldoctorsmgr.cpp \
+    sqlpatientsmgr.cpp
 
 HEADERS += \
-    drawwave.h \
-    loginform.h \
-    patient.h \
-    patientform.h \
-    serialreceiver.h \
-    serialsender.h \
-    showdata.h \
-    widget.h \
-    widgetcurrent.h \
-    widgethistory.h \
-    clientwidget.h \
-    historicaldataform.h \
-    sqlpatientsmgr.h \
-    widgetselect.h
-
+    serverwidget.h \
+    sqldoctorsmgr.h \
+    sqlpatientsmgr.h
 
 FORMS += \
-    loginform.ui \
-    patientform.ui \
-    widget.ui \
-    clientwidget.ui \
-    historicaldataform.ui \
-    widgetcurrent.ui \
-    widgethistory.ui \
-    widgetselect.ui
+    serverwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    image.qrc
-
