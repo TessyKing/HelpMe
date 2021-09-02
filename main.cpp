@@ -1,22 +1,23 @@
-
 #include "widget.h"
 #include "serialsender.h"
 #include "serialreceiver.h"
 #include "widgetselect.h"
-#include <QApplication>
+#include "chooseform.h"
+#include <loginform.h>
 #include <clientwidget.h>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    //选择界面
-    WidgetSelect *widgetSelect = new WidgetSelect( );
-    widgetSelect->resize(1200,900);
-    widgetSelect->setWindowTitle("“救救我”无人值守监控系统");
-    widgetSelect->setStyleSheet("{image: url(:./picture/background.jpg);}");//背景图
-    widgetSelect->show();
-    // ClientWidget cw;
-    // cw.show();
+//    ChooseForm *chooseWidget = new ChooseForm();
+//    //选择界面
+//    //显示页面
+//    chooseWidget->show();
+//    //隐藏界面
+//    chooseWidget->hide();
+    ClientWidget *cw = new ClientWidget();
+
     return a.exec();
 }

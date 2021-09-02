@@ -28,14 +28,7 @@ DrawWave::DrawWave(QWidget *parent, QColor color1, QColor color2) : QWidget(pare
 
 }
 
-void DrawWave::Slot_Data_Handle( int data )//接收数据并处理的槽函数，同时发送信号
-{
-    //将波形绘制在pixmap上
-    this->Draw_Wave_To_Pixmap( data );//传递数据
-    basicTimer->start(100, this);//
-    this->update();//触发QPaintEvent
 
-}
 
 void DrawWave::timerEvent( QTimerEvent *timerEvent )
 {
@@ -72,7 +65,7 @@ void DrawWave::Draw_Wave_To_Pixmap( int data )
         currentX = 0;
         lastX=0;
     }
-    currentY = round( height / 2.00 - ( ( data - 2048 ) / 600.00 ) * height / 2.00 );//注意doubel型转换
+    currentY = round( height / 2.00 - ( ( data - 2048 ) / 600.00 ) * height / 2.00 );//注意double型转换
 
 //    qDebug()<<"data" + QString::number(data);
 //    qDebug()<<"currentY" + QString::number(currentY);
@@ -130,4 +123,13 @@ void DrawWave::Draw_Wave( QPainter *painter )
 
     //画线
     painter->drawLine( *lineBegin, *lineEnd );
+}
+
+void DrawWave::Slot_Data_Handle( int data )//接收数据并处理的槽函数，同时发送信号
+{
+    //将波形绘制在pixmap上
+    this->Draw_Wave_To_Pixmap( data );//传递数据
+    basicTimer->start(100, this);//
+    this->update();//触发QPaintEvent
+
 }

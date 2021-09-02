@@ -30,7 +30,9 @@ private:
 private slots:
     void Slot_Select_To_Current( Patient *patient );
     void Slot_Current_To_Select( Patient *patient );
-
+    void Slot_Select_To_Main();
+signals:
+    void Signal_Select_To_Main();
 };
 
 #endif // WIDGETSELECT_H

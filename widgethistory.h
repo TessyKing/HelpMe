@@ -16,7 +16,7 @@ class WidgetHistory : public QWidget
     Q_OBJECT
 
 public:
-    explicit WidgetHistory( QString comSender = "COM21", QString comReceiver = "COM22", QString name = "name", QString date = "date", QString pic_str = ":/picture/P1.jpg", int age = 10, int number = 1, QWidget *parent = nullptr );
+    explicit WidgetHistory(  int comStart = 1, QString name = "name", QString date = "date", QString pic_str = ":/picture/P1.jpg", int age = 10, int number = 1, QWidget *parent = nullptr );
     ~WidgetHistory();
     DrawWave *drawECG;
     DrawWave *drawSpO2;
@@ -26,8 +26,13 @@ public:
     ShowData *showRESP;
 
     WidgetHistory *widgetHistory;
-    SerialReceiver *receiver;
-    SerialSender *sender;
+
+    SerialReceiver *receiverECG;
+    SerialReceiver *receiverSpO2;
+    SerialReceiver *receiverRESP;
+    SerialSender *senderECG;
+    SerialSender *senderSpO2;
+    SerialSender *senderRESP;
 
 private slots:
     void on_backButton_clicked();

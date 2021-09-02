@@ -81,12 +81,12 @@ void SerialReceiver::Serial_Rx()
         if (this->status == 4)
         {
             // 发送信号画波形
-            emit Signal_ECG_Received( ecg2, ecg2, ecg2 );
+            emit Signal_ECG_Received( ecg2 );
 
             // 计算心率,发送心率
             ECG_BPM_Calc( ecg2 );
 
-            emit Signal_BPM_Received( ecg2Bpm, ecg2Bpm, ecg2Bpm );
+            emit Signal_BPM_Received( ecg2Bpm );
         }
     }
 }

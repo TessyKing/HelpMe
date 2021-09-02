@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chooseform.cpp \
     drawwave.cpp \
     loginform.cpp \
     main.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     widgetselect.cpp
 
 HEADERS += \
+    chooseform.h \
     drawwave.h \
     loginform.h \
     patient.h \
@@ -50,6 +52,7 @@ HEADERS += \
 
 
 FORMS += \
+    chooseform.ui \
     loginform.ui \
     patientform.ui \
     widget.ui \
