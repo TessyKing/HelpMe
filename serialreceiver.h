@@ -42,8 +42,8 @@ public:
     int Get_Max(int * data, int len);
 
 signals:
-    void Signal_ECG_Received(int ecg1, int ecg2, int ecg3);     //波形y轴数据
-    void Signal_BPM_Received(int bpm1, int bmp2, int bmp3);     //心率数据
+    void Signal_ECG_Received( int ecg );     //波形y轴数据
+    void Signal_BPM_Received( int bpm );     //心率数据
 
 };
 

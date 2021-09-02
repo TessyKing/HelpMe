@@ -1,4 +1,3 @@
-
 #include "patientform.h"
 #include "ui_patientform.h"
 
@@ -19,7 +18,6 @@ PatientForm::PatientForm( QString name, QString date, QString pic_str, int age, 
     icon.addFile(pic_str);
     ui->PatientPic->setIcon(icon);
     ui->PatientPic->setIconSize(QSize(220, 200));
-
 }
 
 PatientForm::~PatientForm()

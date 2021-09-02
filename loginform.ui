@@ -13,14 +13,20 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>30</y>
      <width>521</width>
      <height>131</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
    <property name="html">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -34,42 +40,56 @@ p, li { white-space: pre-wrap; }
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>190</y>
-     <width>521</width>
-     <height>321</height>
+     <x>80</x>
+     <y>160</y>
+     <width>631</width>
+     <height>381</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>忘记密码</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="Password">
       <property name="text">
        <string>密码：</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEdit_2"/>
-    </item>
     <item row="3" column="0">
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="Rememberpassword">
       <property name="text">
        <string>记住密码</string>
       </property>
      </widget>
     </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEditUserName"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="forget">
+      <property name="text">
+       <string>忘记密码</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEditPassWord">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="Username">
+      <property name="text">
+       <string>用户名：</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="choose">
       <item>
        <property name="text">
-        <string>Patient</string>
+        <string>Management</string>
        </property>
       </item>
       <item>
@@ -79,22 +99,12 @@ p, li { white-space: pre-wrap; }
       </item>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>用户名：</string>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="0" colspan="2">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btnLogin">
       <property name="text">
        <string>登录</string>
       </property>
      </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
     </item>
    </layout>
   </widget>
@@ -102,4 +112,3 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections/>
 </ui>
-

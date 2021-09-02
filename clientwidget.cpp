@@ -2,14 +2,18 @@
 #include "ui_clientwidget.h"
 
 #include <qhostaddress.h>
+#include <loginform.h>
 
 #include <QByteArray>
+#include <QMessageBox>
 
 ClientWidget::ClientWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ClientWidget)
 {
     ui->setupUi(this);
+
+    LoginForm::Instance()->show();
 
     setWindowTitle("客户端");
 
@@ -19,14 +23,15 @@ ClientWidget::ClientWidget(QWidget *parent) :
     tcpSocket = new QTcpSocket(this);
 
     //获取服务器IP和端口
-    QString ip = "10.197.71.205";
+    QString ip = "10.197.114.230";
     int port = 8888;
     //主动和服务器建立连接
     tcpSocket->connectToHost(QHostAddress(ip),port);
     //成功连接至服务器
     connect(tcpSocket,&QTcpSocket::connected,[=](){
-        connect(ui->btnLogIn,&QPushButton::clicked,[=](){
-            QString str = "login###U:" + ui->lineEditUserName->text() + "$P:" + ui->lineEdiPassWord->text();
+        connect(LoginForm::Instance()->GetBTNLogIn(),&QPushButton::clicked,[=](){
+            QString str = "login###U:" + LoginForm::Instance()->GetUserName() + "$P:" + LoginForm::Instance()->GetPassWord();
+            qDebug() << str;
             ui->btnLogIn->setEnabled(false);
             tcpSocket->write(str.toUtf8().data());
         });
@@ -43,17 +48,19 @@ ClientWidget::ClientWidget(QWidget *parent) :
         if(title.compare("login") == 0){
             //成功登录
             if(datas.compare("true") == 0){
-                qDebug("成功登录");
+                LoginForm::Instance()->SucLogIn();
             }
             //用户名或密码错误
             else{
-                qDebug() << "用户名或密码错误";
+                //qDebug() << "用户名或密码错误";
+                QMessageBox::critical(this,"登录错误","用户名或密码错误");
             }
         }
     });
 
     connect(tcpSocket,&QTcpSocket::disconnected,[=](){
         qDebug() << tcpSocket->peerAddress().toString() + "断开连接";
+        tcpSocket->disconnectFromHost();
     });
 
     /*测试代码*/

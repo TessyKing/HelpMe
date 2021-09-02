@@ -147,7 +147,7 @@
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -178,7 +178,7 @@
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -197,7 +197,7 @@
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -216,7 +216,7 @@
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>14</pointsize>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
